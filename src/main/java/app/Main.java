@@ -1,9 +1,7 @@
 package app;
 
-import app.model.Card;
-import app.model.Color;
-import app.model.Deck;
-import app.model.Type;
+import app.game.Game;
+import app.ui.Terminal;
 
 import java.util.Scanner;
 
@@ -13,10 +11,12 @@ public class Main {
     static void main() {
         Scanner sc = new Scanner(System.in);
 
-        Deck deck = new Deck();
+        Game game = new Game(new Terminal());
+
+        game.start();
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Write your name!"));
+        // IO.println(String.format("Write your name!"));
         String name = sc.nextLine();
 
 

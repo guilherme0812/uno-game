@@ -81,12 +81,16 @@ public class Deck {
 
     public Card draw() {
         Card card = this.deckCards.getFirst();
-        this.deckCards.removeFirst(0);
+        this.deckCards.removeFirst();
 
         return card;
     }
 
     public void returnCardToDeck(Card card) {
         this.deckCards.add(card);
+    }
+
+    public int getSize() {
+        return this.deckCards.size();
     }
 }

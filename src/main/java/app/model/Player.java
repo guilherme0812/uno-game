@@ -7,8 +7,8 @@ public class Player {
     private final String name;
     private final List<Card> cardsInHand = new ArrayList<>();
 
-    Player(String name) {
-        this.name = name
+    public Player(String name) {
+        this.name = name;
     }
 
     public String getName() {
@@ -19,7 +19,7 @@ public class Player {
         return cardsInHand;
     }
 
-    public void add(Card card) {
+    public void addCard(Card card) {
         this.cardsInHand.add(card);
     }
 

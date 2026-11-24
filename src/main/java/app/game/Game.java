@@ -23,14 +23,32 @@ public class Game {
     }
 
     public void start() {
+        this.settingPlayers();
+        this.dealCards();
+        this.turnOverTheTopCard();
+
         boolean end = false;
 
         while (!end) {
             end = playTurn();
         }
+
+        IO.println(deck.getSize());
     }
 
     public void settingPlayers() {
+        int qtd = 2;
+        for (int i = 0; i < qtd; i++) {
+            Player player = new Player("Player " + i);
+            int cardsQtd = 7;
+
+            for (int cardInt = 0; cardInt < cardsQtd; cardInt++) {
+                player.addCard(this.deck.draw());
+            }
+
+            IO.println(player.getName() + " have " + player.getCardsInHand().size() + " on hands");
+            this.players.add(player);
+        }
     }
 
     public void dealCards() {
