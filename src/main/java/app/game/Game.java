@@ -23,7 +23,11 @@ public class Game {
     }
 
     public void start() {
+        boolean end = false;
 
+        while (!end) {
+            end = playTurn();
+        }
     }
 
     public void settingPlayers() {
@@ -34,6 +38,10 @@ public class Game {
 
     public void turnOverTheTopCard() {
 
+    }
+
+    public boolean playTurn() {
+        return true;
     }
 
 }

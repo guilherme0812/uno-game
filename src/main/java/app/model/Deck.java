@@ -78,4 +78,15 @@ public class Deck {
             IO.println("card: " + card.getType() + " " + (color != null ? color : "") + " " + (number != null ? number : ""));
         }
     }
+
+    public Card draw() {
+        Card card = this.deckCards.getFirst();
+        this.deckCards.removeFirst(0);
+
+        return card;
+    }
+
+    public void returnCardToDeck(Card card) {
+        this.deckCards.add(card);
+    }
 }
