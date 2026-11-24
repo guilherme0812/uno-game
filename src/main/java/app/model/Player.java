@@ -23,7 +23,7 @@ public class Player {
         this.cardsInHand.add(card);
     }
 
-    public void remove(Card card) {
+    public void removeCard(Card card) {
         this.cardsInHand.remove(card);
     }
 

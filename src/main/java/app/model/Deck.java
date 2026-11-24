@@ -80,10 +80,7 @@ public class Deck {
     }
 
     public Card draw() {
-        Card card = this.deckCards.getFirst();
-        this.deckCards.removeFirst();
-
-        return card;
+        return this.deckCards.removeFirst();
     }
 
     public void returnCardToDeck(Card card) {
