@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Terminal {
-    private final Scanner sc = new Scanner();
+    private final Scanner sc = new Scanner(System.in);
 
 
     public void showTable(Card cardOnTop, Color actualColor) {
@@ -28,7 +28,7 @@ public class Terminal {
         System.out.println("It's the turn of " + player.getName() + ". There are: ");
         List<Card> hand = player.getCardsInHand();
 
-        for (int i; i < hand.size(); i++) {
+        for (int i = 0; i < hand.size(); i++) {
             System.out.println("  [" + (i + 1) + "] " + this.formatCard(hand.get(i)));
         }
 
@@ -99,8 +99,29 @@ public class Terminal {
     }
 
     // formatting
-    public String formatCard(Card card) {
-        return "";
+    public String formatCard(Card c) {
+        String texto;
+        switch (c.getType()) {
+            case NUMBER:
+                texto = c.getColor() + " " + c.getNumber();
+                break;
+            case SKIP:
+                texto = c.getColor() + " SKIP";
+                break;
+            case REVERSE:
+                texto = c.getColor() + " REVERSE";
+                break;
+            case DRAW_TWO:
+                texto = c.getColor() + " +2";
+                break;
+            case WILD:
+                texto = "WILD";
+                break;
+            default:
+                texto = "WILD +4";
+                break;
+        }
+        return this.colorText(c.getColor(), texto);
     }
 
     public String colorText(Color color, String message) {
